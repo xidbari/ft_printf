@@ -8,7 +8,6 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-AR = ar rc
 
 INCLUDES = -I. -I$(LIBFT_DIR)
 
@@ -19,7 +18,7 @@ $(LIBFT):
 
 $(NAME): $(OBJ) $(LIBFT)
 	cp $(LIBFT) $(NAME)
-	$(AR) $(NAME) $(OBJ)
+	ar rc $(NAME) $(OBJ)
 
 %.o: %.c ft_printf.h
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
